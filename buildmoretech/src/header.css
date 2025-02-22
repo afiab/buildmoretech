@@ -1,0 +1,90 @@
+/* Root Variables */
+:root {
+    --font1: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --font2: 'Courier New', Courier, monospace;
+
+    /* Colors */
+    --white: #ffffff; 
+    --black: #000000;
+    --yellow: #ffc107; /* Safety Yellow */
+    --orange: #ff6f00; /* Construction Orange */
+    --gray: #333333; /* Asphalt */
+    --blue: #4682b4; /* Steel */
+    --dark-gray: #222222; /* Darker background */
+}
+
+/* Header container: Flexbox layout for horizontal alignment */
+header {
+    display: flex;
+    justify-content: space-between; /* Ensures the left section stays left, right section stays right */
+    align-items: center;  /* Ensures vertical alignment of both sections */
+    padding: 10px 20px;
+    background-color: var(--dark-gray);
+    color: var(--yellow);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    z-index: 1000;
+}
+
+/* Left Section: Logo & Title */
+.header-left {
+    display: flex;  /* Aligns the logo and title horizontally */
+    align-items: center;  /* Vertically centers the logo and title */
+    gap: 15px;  /* Space between the logo and title */
+}
+
+/* Logo Styling */
+.logo {
+    height: 40px; /* Adjust logo size */
+}
+
+/* Title Styling */
+h1 {
+    margin: 0;
+}
+
+h1 a {
+    font-family: var(--font1);
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+/* Right Section: Navigation */
+.header-right {
+    display: flex;  /* Aligns the navigation items horizontally */
+    align-items:flex-end;  /* Vertically center the links */
+}
+
+/* Navigation list styling */
+.header-right ul {
+    display: flex;  /* Makes the list items appear horizontally */
+    list-style: none;  /* Removes default list bullets */
+    margin: 0;
+    padding: 0;
+}
+
+/* List item styling */
+.header-right li {
+    display: inline;  /* Makes each list item display in-line */
+    margin: 0 10px;  /* Adds space between the links */
+
+}
+
+/* Link styling */
+.header-right a {
+    font-family: var(--font1);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Hover effect on links */
+.header-right a:hover {
+    color: var(--yellow);
+}

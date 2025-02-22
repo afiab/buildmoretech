@@ -4,7 +4,7 @@ function Landing() {
         <div class="landing-container">
             <h1>Build More Tech</h1>
             <h2>Build More from Less</h2>
-            <a href="index.html">
+            <a href="project.html">
                 <button>Get Started</button>
             </a>
         </div>
