@@ -41,7 +41,7 @@ function Modal({ isOpen, onClose, project, onSave, onDelete }) {
                 </label>
                 <label>
                     Description:
-                    <textarea
+                    <textarea class="description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />

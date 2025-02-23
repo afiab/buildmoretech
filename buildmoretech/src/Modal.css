@@ -35,6 +35,10 @@
     border-radius: 4px;
 }
 
+.description {
+    height: 100px;
+}
+
 .modal-buttons {
     display: flex;
     justify-content: space-between;
