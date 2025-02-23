@@ -13,21 +13,25 @@
     --dark-gray: #222222; /* Darker background */
 }
 
-h1 {
-    font-family: var(--font1);
+.project-box {
+    border: 1px solid var(--white);
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    background-color: var(--dark-gray);
     color: var(--white);
+}
+
+.project-box h3 {
+    font-family: var(--font1);
+    color: var(--yellow);
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 10px 20px;
+    text-align: center;
 }
 
-body {
-    background: url('assets/blueprint.jpg') repeat;
-    background-size: 20%; /* Keeps original image size */
-    background-position: top left; /* Aligns image to the top-left */
-}
-
-
-.spacer {
-    height: 100px;
+.project-box p {
+    font-family: var(--font2);
+    color: var(--white);
+    text-align: center;
 }
