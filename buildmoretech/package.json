@@ -16,7 +16,9 @@
     "express": "^4.21.2",
     "mongodb": "^6.13.1",
     "mongoose": "^8.10.1",
+    "openai": "^4.85.4",
     "react": "^19.0.0",
+    "react-chatbotify": "^2.0.0-beta.30",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
