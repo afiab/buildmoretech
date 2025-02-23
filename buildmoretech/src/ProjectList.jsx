@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import ProjectBox from './ProjectBox';
 import Modal from './Modal';
 
-const projects = [
-    { title: 'Project 1', description: 'Description of Project 1' },
-    { title: 'Project 2', description: 'Description of Project 2' },
-    { title: 'Project 3', description: 'Description of Project 3' },
-];
-
 function ProjectList() {
+    const [projects, setProjects] = useState([]);
     const [selectedProject, setSelectedProject] = useState(null);
+
+    useEffect(() => {
+        // Fetch projects from the API
+        axios.get('/api/projects')
+            .then(response => {
+                setProjects(response.data);
+            })
+            .catch(error => {
+                console.error('There was an error fetching the projects!', error);
+            });
+    }, []);
 
     const handleProjectClick = (project) => {
         setSelectedProject(project);
