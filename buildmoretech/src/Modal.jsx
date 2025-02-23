@@ -38,8 +38,9 @@ function Modal({ isOpen, onClose, project, onSave }) {
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </label>
-                <button onClick={handleSave}>Save</button>
-                <button onClick={onClose}>Close</button>
+                <div className="modal-buttons">
+                    <button onClick={handleSave}>Save</button>
+                </div>
             </div>
         </div>
     );
