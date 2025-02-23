@@ -1,9 +1,9 @@
 const axios = require('axios');
 
 const projects = [
-    { title: 'Project 1', description: 'Description of Project 1' },
-    { title: 'Project 2', description: 'Description of Project 2' },
-    { title: 'Project 3', description: 'Description of Project 3' },
+    { title: 'Example Title', description: 'There will be a description here for the project. Users can click on this to add more materials, like notes, links, and progress.' },
+    { title: 'Project Tracker', description: 'This is a project that will help track what projects I am working on so that I can set reasonable deadlines and measure my progress. ' },
+    { title: 'Personal Website', description: 'A portfolio site for my projects.' },
     // Add more projects as needed
 ];
 

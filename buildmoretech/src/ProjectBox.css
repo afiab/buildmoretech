@@ -20,6 +20,7 @@
     border-radius: 8px;
     background-color: var(--dark-gray);
     color: var(--white);
+    width: 275px;
 }
 
 .project-box h3 {
