@@ -59,6 +59,16 @@ app.delete('/api/projects', async (req, res) => {
     }
 });
 
+// API endpoint to delete a specific project
+app.delete('/api/projects/:id', async (req, res) => {
+    try {
+        await Project.findByIdAndDelete(req.params.id);
+        res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
 // API endpoint to update a project
 app.put('/api/projects/:id', async (req, res) => {
     try {

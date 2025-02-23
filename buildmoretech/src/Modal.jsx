@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Modal.css';
 
-function Modal({ isOpen, onClose, project, onSave }) {
+function Modal({ isOpen, onClose, project, onSave, onDelete }) {
     const [title, setTitle] = useState(project?.title || '');
     const [description, setDescription] = useState(project?.description || '');
 
@@ -9,6 +9,9 @@ function Modal({ isOpen, onClose, project, onSave }) {
         if (project) {
             setTitle(project.title);
             setDescription(project.description);
+        } else {
+            setTitle('');
+            setDescription('');
         }
     }, [project]);
 
@@ -19,10 +22,15 @@ function Modal({ isOpen, onClose, project, onSave }) {
         onClose();
     };
 
+    const handleDelete = () => {
+        onDelete(project._id);
+        onClose();
+    };
+
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <h2>Edit Project</h2>
+                <h2>{project ? 'Edit Project' : 'Add Project'}</h2>
                 <label>
                     Title:
                     <input
@@ -40,6 +48,8 @@ function Modal({ isOpen, onClose, project, onSave }) {
                 </label>
                 <div className="modal-buttons">
                     <button onClick={handleSave}>Save</button>
+                    {project && <button className="Delete" onClick={handleDelete}>Delete</button>}
+                    {!project && <button onClick={onClose}>Cancel</button>}
                 </div>
             </div>
         </div>

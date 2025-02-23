@@ -6,6 +6,7 @@ import Modal from './Modal';
 function ProjectList() {
     const [projects, setProjects] = useState([]);
     const [selectedProject, setSelectedProject] = useState(null);
+    const [isAdding, setIsAdding] = useState(false);
 
     useEffect(() => {
         // Fetch projects from the API
@@ -20,34 +21,64 @@ function ProjectList() {
 
     const handleProjectClick = (project) => {
         setSelectedProject(project);
+        setIsAdding(false);
+    };
+
+    const handleAddProjectClick = () => {
+        setSelectedProject(null);
+        setIsAdding(true);
     };
 
     const handleCloseModal = () => {
         setSelectedProject(null);
+        setIsAdding(false);
     };
 
-    const handleSaveProject = (updatedProject) => {
-        axios.put(`/api/projects/${updatedProject._id}`, updatedProject)
-            .then(response => {
-                setProjects(projects.map(project => 
-                    project._id === updatedProject._id ? updatedProject : project
-                ));
+    const handleSaveProject = (project) => {
+        if (isAdding) {
+            axios.post('/api/projects', project)
+                .then(response => {
+                    setProjects([...projects, response.data]);
+                })
+                .catch(error => {
+                    console.error('There was an error adding the project!', error);
+                });
+        } else {
+            axios.put(`/api/projects/${project._id}`, project)
+                .then(response => {
+                    setProjects(projects.map(p => 
+                        p._id === project._id ? project : p
+                    ));
+                })
+                .catch(error => {
+                    console.error('There was an error updating the project!', error);
+                });
+        }
+        handleCloseModal();
+    };
+
+    const handleDeleteProject = (id) => {
+        axios.delete(`/api/projects/${id}`)
+            .then(() => {
+                setProjects(projects.filter(project => project._id !== id));
             })
             .catch(error => {
-                console.error('There was an error updating the project!', error);
+                console.error('There was an error deleting the project!', error);
             });
     };
 
     return (
         <div className="project-list">
+            <button className="Add" onClick={handleAddProjectClick}><h1>Add Project</h1></button>
             {projects.map((project, index) => (
                 <ProjectBox key={index} project={project} onClick={handleProjectClick} />
             ))}
             <Modal
-                isOpen={!!selectedProject}
+                isOpen={!!selectedProject || isAdding}
                 onClose={handleCloseModal}
                 project={selectedProject}
                 onSave={handleSaveProject}
+                onDelete={handleDeleteProject}
             />
         </div>
     );

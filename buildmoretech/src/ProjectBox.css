@@ -36,3 +36,18 @@
     color: var(--white);
     text-align: center;
 }
+
+.Add {
+    border: 1px solid var(--white);
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    background-color: var(--dark-gray);
+    width: 275px;
+    font-family: var(--font1);
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    cursor: pointer;
+}
