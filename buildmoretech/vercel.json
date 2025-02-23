@@ -1,0 +1,19 @@
+{
+    "routes": [
+      {
+        "src": "/project",
+        "dest": "/project.html"
+      },
+      {
+        "src": "/assistant",
+        "dest": "/assistant.html"
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/index.html"
+      }
+    ]
+  }
+  
