@@ -87,3 +87,13 @@ h1 a {
 .header-right a:hover {
     color: var(--yellow);
 }
+
+/* Responsive Design: Adjust header for smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+}
