@@ -26,12 +26,29 @@ function ProjectList() {
         setSelectedProject(null);
     };
 
+    const handleSaveProject = (updatedProject) => {
+        axios.put(`/api/projects/${updatedProject._id}`, updatedProject)
+            .then(response => {
+                setProjects(projects.map(project => 
+                    project._id === updatedProject._id ? updatedProject : project
+                ));
+            })
+            .catch(error => {
+                console.error('There was an error updating the project!', error);
+            });
+    };
+
     return (
         <div className="project-list">
             {projects.map((project, index) => (
                 <ProjectBox key={index} project={project} onClick={handleProjectClick} />
             ))}
-            <Modal isOpen={!!selectedProject} onClose={handleCloseModal} project={selectedProject} />
+            <Modal
+                isOpen={!!selectedProject}
+                onClose={handleCloseModal}
+                project={selectedProject}
+                onSave={handleSaveProject}
+            />
         </div>
     );
 }

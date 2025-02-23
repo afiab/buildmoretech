@@ -8,13 +8,18 @@ const projects = [
 ];
 
 async function addProjects() {
-    for (const project of projects) {
-        try {
-            const response = await axios.post('http://localhost:5001/api/projects', project);
-            console.log('Added project:', response.data);
-        } catch (error) {
-            console.error('Error adding project:', error);
-        }
+    try {
+        // Delete all existing projects
+        // await axios.delete('http://localhost:5001/api/projects');
+        // console.log('All projects deleted');
+
+        // Add new projects
+        // for (const project of projects) {
+        //     const response = await axios.post('http://localhost:5001/api/projects', project);
+        //     console.log('Added project:', response.data);
+        // }
+    } catch (error) {
+        console.error('Error:', error);
     }
 }
 

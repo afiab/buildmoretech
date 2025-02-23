@@ -49,6 +49,26 @@ app.post('/api/projects', async (req, res) => {
     }
 });
 
+// API endpoint to delete all projects
+app.delete('/api/projects', async (req, res) => {
+    try {
+        await Project.deleteMany({});
+        res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// API endpoint to update a project
+app.put('/api/projects/:id', async (req, res) => {
+    try {
+        const updatedProject = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.json(updatedProject);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });

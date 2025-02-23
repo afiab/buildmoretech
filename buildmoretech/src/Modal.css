@@ -17,3 +17,31 @@
     max-width: 500px;
     width: 100%;
 }
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: var(--dark-gray);
+}
