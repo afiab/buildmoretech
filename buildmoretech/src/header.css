@@ -18,7 +18,7 @@ header {
     display: flex;
     justify-content: space-between; /* Ensures the left section stays left, right section stays right */
     align-items: center;  /* Ensures vertical alignment of both sections */
-    padding: 10px 20px;
+    padding: 10px 0px;
     background-color: var(--dark-gray);
     color: var(--yellow);
     width: 100%;
@@ -33,7 +33,6 @@ header {
 .header-left {
     display: flex;  /* Aligns the logo and title horizontally */
     align-items: center;  /* Vertically centers the logo and title */
-    gap: 15px;  /* Space between the logo and title */
 }
 
 /* Logo Styling */
