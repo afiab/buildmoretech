@@ -1,0 +1,33 @@
+/* Root Variables */
+:root {
+    --font1: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --font2: 'Courier New', Courier, monospace;
+
+    /* Colors */
+    --white: #ffffff; 
+    --black: #000000;
+    --yellow: #ffc107; /* Safety Yellow */
+    --orange: #ff6f00; /* Construction Orange */
+    --gray: #333333; /* Asphalt */
+    --blue: #4682b4; /* Steel */
+    --dark-gray: #222222; /* Darker background */
+}
+
+h1 {
+    font-family: var(--font1);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+}
+
+body {
+    background: url('assets/blueprint.jpg') repeat;
+    background-size: 20%; /* Keeps original image size */
+    background-position: top left; /* Aligns image to the top-left */
+}
+
+
+.spacer {
+    height: 100px;
+}

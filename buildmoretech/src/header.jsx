@@ -12,7 +12,7 @@ function Header() {
             <nav class="header-right">
                 <ul>
                 <li><a href="project.html">Projects</a></li>
-                <li><a href="calendar.html">To Do's</a></li>
+                <li><a href="todo.html">To Do's</a></li>
                 <li><a href="assistant.html">Assistant</a></li>
                 <li>   </li>
                 </ul>
